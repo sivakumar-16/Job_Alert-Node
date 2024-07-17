@@ -11,9 +11,9 @@ const url = "https://accounts.zoho.com/oauth/v2/token";
 export const getZohoAuthToken = async () => {
   const data = {
     grant_type: "authorization_code",
-    client_id: process.env.Client_id,
-    client_secret: process.env.Client_secret,
-    code: process.env.code,
+    client_id: "1000.UN33285Z3M2NV60IMVUGKMML1RSFNW",
+    client_secret:"fab6831b2e0d9083046f70791521b6367e226f18ce",
+    code: "1000.044f0e059f3f2b17202693c1cda7aa21.bbd5cf817053a04ffb7154206938ffcb",
   };
   try {
     const response = await axios.post(url, qs.stringify(data), {

@@ -1,14 +1,19 @@
 import path from "path";
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import dotenv from 'dotenv';
+
+
+dotenv.config();
+console.log('password',process.env.PASSWORD);
 
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
   port: 5432,
-  username: process.env.USERNAME,
-  password: process.env.PASS,
-  database: process.env.DB_NAME,
+  username: "postgres",
+  password:"1609",
+  database: "jobs",
   entities: [path.join(process.cwd(), "src/Models/*.ts")],
   synchronize: true,
   logging: true,

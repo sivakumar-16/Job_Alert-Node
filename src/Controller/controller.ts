@@ -16,15 +16,6 @@ export const getAccessToken = async (req: Request, res: Response) => {
   }
 };
 
-// export const getTimeLogs = async (req: Request, res: Response) => {
-//   try {
-//     const timeLogs = await getTimeLog();
-//     res.json(timeLogs);
-//   } catch (error) {
-//     console.error('Error fetching time logs:', error);
-//     res.status(500).json({ error: 'Failed to fetch time logs' });
-//   }
-// };
 
 export const getZohoTimeLogs = async (req: Request, res: Response) => {
   try {

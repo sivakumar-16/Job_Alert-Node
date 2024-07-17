@@ -3,6 +3,9 @@ import { checkConnection } from '../dbConfig';
 import route from './Routes/routes';
 import concurrencyLimit from './middleware/concurrencyLimit';
 import rateLimit from './middleware/rateLimit';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const app = express();
 

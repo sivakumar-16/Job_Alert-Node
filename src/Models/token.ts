@@ -3,17 +3,17 @@ import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn } from "typeor
 @Entity()
 export class AccessToken {
   @PrimaryGeneratedColumn()
-  id: number = 0;
+  id: number ;
 
   @Column()
-  access_token: string = '';
+  access_token: string ;
 
   @Column()
-  refresh_token: string = '';
+  refresh_token: string ;
 
   @Column('bigint')
-  expires_in: number = 0;
+  expires_in: number ;
 
   @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date = new Date(); 
+  created_at: Date ; 
 }
