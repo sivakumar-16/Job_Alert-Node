@@ -1,4 +1,11 @@
 import express from 'express';
+import { checkConnection } from '../dbConfig';
+import route from './Routes/routes';
+import concurrencyLimit from './middleware/concurrencyLimit';
+import rateLimit from './middleware/rateLimit';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const app = express();
 
@@ -10,6 +17,11 @@ app.get('/', (req, res) => {
   res.send('Successfully connected');
 });
 
+app.use('/job/', rateLimit);
+app.use('/job/', concurrencyLimit);
+app.use('/job',route)
+
 app.listen(PORT,()=>{
     console.log(`Server running on port ${PORT}`);
+    checkConnection();
 })
